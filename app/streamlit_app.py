@@ -31,7 +31,9 @@ with check:
         n_b = b1.number_input("Users in B (variant)", 1, 100_000_000, 45489)
         x_b = b2.number_input("Conversions in B", 0, 100_000_000, 8279)
         planned = st.slider("Planned share of traffic to A (%)", 1, 99, 50)
+        st.caption("Only used for the split check. The result uses your actual numbers.")
         conf = st.select_slider("Confidence level", [90, 95, 99], 95)
+        st.caption("Pick this before the test starts, not after seeing the result.")
     alpha = 1 - conf / 100
 
     if x_a > n_a or x_b > n_b:
@@ -82,6 +84,7 @@ with plan:
                                   1.0, step=0.1) / 100
         power = st.select_slider("Power (chance of detecting a real effect)", [70, 80, 90, 95], 80) / 100
         conf_p = st.select_slider("Confidence level ", [90, 95, 99], 95)
+        st.caption("Pick this before the test starts, not after seeing the result.")
         daily = st.number_input("Users per day entering the test (both groups)", 1, 10_000_000, 5000)
     with right:
         if mde_pts >= base:
