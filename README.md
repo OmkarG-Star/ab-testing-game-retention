@@ -1,5 +1,7 @@
 # A/B Test: Does Moving a Game's First Gate Hurt Retention?
 
+[![CI](https://github.com/OmkarG-Star/ab-testing-game-retention/actions/workflows/ci.yml/badge.svg)](https://github.com/OmkarG-Star/ab-testing-game-retention/actions/workflows/ci.yml)
+
 **Live calculator: [ab-test-calculator-rmke.onrender.com](https://ab-test-calculator-rmke.onrender.com)**. Check your own test for traffic-split problems, significance and the probability B beats A, or plan the sample size for a new one. Free hosting, so the first load can take about a minute.
 
 Analysis of a real experiment on 90,189 players of the mobile game *Cookie Cats*. The first "gate", where players must wait or pay to continue, was moved from level 30 to level 40.
