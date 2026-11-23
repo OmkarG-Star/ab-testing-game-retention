@@ -1,5 +1,7 @@
 # A/B Test: Does Moving a Game's First Gate Hurt Retention?
 
+**Live calculator: [ab-test-calculator.onrender.com](https://ab-test-calculator.onrender.com)**. Check your own test for traffic-split problems, significance and the probability B beats A, or plan the sample size for a new one. Free hosting, so the first load can take about a minute.
+
 Analysis of a real experiment on 90,189 players of the mobile game *Cookie Cats*. The first "gate", where players must wait or pay to continue, was moved from level 30 to level 40.
 
 **Decision: keep the gate at level 30.** Moving it to 40 lowered 7-day retention by **0.82 percentage points** (19.02% → 18.20%, 95% CI −1.33 to −0.31, p = 0.002). That conclusion holds after correcting for three metrics, and after a worst-case allowance for the flawed traffic split described below.
@@ -81,6 +83,7 @@ pip install -r requirements.txt
 python scripts/get_data.py
 PYTHONPATH=src python -m abtest.analysis   # writes reports/results.json and figures
 pytest
+streamlit run app/streamlit_app.py
 ```
 
 ```
@@ -88,4 +91,5 @@ src/abtest/stats.py      SRM test, z-test with CI, MDE and sample size, Holm, bo
                          Bayesian probability, A/A peeking simulation
 src/abtest/analysis.py   the four steps above, in order
 tests/test_stats.py      checks against statsmodels and known properties
+app/streamlit_app.py     the live calculator, built on the same tested functions
 ```
